@@ -22,6 +22,29 @@ public class JoukkoOperaatiotTest {
         
         assertArrayEquals(odotettu, vastauksenLuvut);        
     } 
+    @Test
+    public void leikkausToimii(){
+        IntJoukko eka = teeJoukko(1,3);
+        IntJoukko toka = teeJoukko(3,4);
+        IntJoukko tulos = IntJoukko.leikkaus(eka, toka);
+        int[] vastauksenLuvut = tulos.toIntArray();
+        Arrays.sort(vastauksenLuvut);
+        int[] odotettu = {3};
+        assertArrayEquals(odotettu,vastauksenLuvut);
+        
+    }
+    
+    @Test
+    public void erotusToimii(){
+        IntJoukko eka = teeJoukko(1,3);
+        IntJoukko toka = teeJoukko(1);
+        IntJoukko tulos = IntJoukko.erotus(eka, toka);
+        int[] vastauksenLuvut = tulos.toIntArray();
+        Arrays.sort(vastauksenLuvut);
+        int[] odotettu = {3};
+        assertArrayEquals(odotettu,vastauksenLuvut);
+        
+    } 
 
     private IntJoukko teeJoukko(int... luvut) {
         IntJoukko joukko = new IntJoukko();

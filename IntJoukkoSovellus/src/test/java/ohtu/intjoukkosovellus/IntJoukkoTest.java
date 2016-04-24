@@ -8,12 +8,16 @@ import static org.junit.Assert.*;
 public class IntJoukkoTest {
 
     IntJoukko joukko;
-
+    IntJoukko joukko2;
     @Before
     public void setUp() {
+        
         joukko = new IntJoukko();
         joukko.lisaa(10);
         joukko.lisaa(3);
+        joukko2 = new IntJoukko();
+        joukko2.lisaa(1);
+        joukko2.lisaa(2);
     }
 
     @Test
@@ -86,5 +90,7 @@ public class IntJoukkoTest {
     public void toStringToimiiTyhjallaJoukolla(){
         joukko = new IntJoukko();
         assertEquals("{}", joukko.toString());
-    }     
+    }
+    
+    
 }
